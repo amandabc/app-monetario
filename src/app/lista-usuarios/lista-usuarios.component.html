@@ -1,0 +1,56 @@
+<div>
+
+<table>
+<tr>
+    <th> Nome</th>
+    <th> Email</th>
+    <th> cpf</th>
+    <th> senha</th>
+    <th> id</th>
+
+
+</tr>
+<tr *ngFor = "let usuario of usuarios">
+    
+    <td> {{usuario.nome}}</td>
+    <td> {{usuario.email}}</td>
+    <td> {{usuario.cpf}}</td>
+    <td> {{usuario.senha}}</td>
+    <td> {{usuario.id}}</td>
+
+    <button (click) = deletarContato(usuario.id)> Deletar</button>
+
+
+</tr>
+
+
+
+<div>
+    <h2> Criar novo usuario</h2>
+
+    <form [formGroup]= "contatoForm">
+        <div>
+        <input type="text" placeholder="Nome" formControlName = "nome">
+    </div>
+    <div>
+        <input type="email" placeholder="email" formControlName = "email">
+    </div>
+    <div>
+        <input type="text" placeholder="cpf" formControlName = "cpf">
+    </div>
+    <div>
+        <input type="password" placeholder="senha" formControlName = "senha">
+    </div>
+
+        <button (click)= criarContato()> Entrar</button>
+
+    </form>
+
+
+</div>
+
+
+
+
+</table>
+</div>
